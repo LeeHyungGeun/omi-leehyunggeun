@@ -3,7 +3,6 @@ import style from './_index.css'
 import 'elements/hello'
 import 'elements/page-view'
 
-
 @tag('my-app')
 class MyApp extends WeElement {
 	static get data() {
@@ -19,7 +18,7 @@ class MyApp extends WeElement {
 		return style
 	}
 
-	render(props, data) {
+	render() {
 		return (
 			<div class="app">
 				<main class="main">

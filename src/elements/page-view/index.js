@@ -7,7 +7,7 @@ class PageView extends WeElement {
   static get data() {
 		return { }
   }
-  
+
   installed() {
     this.route(this.props.pages)
   }
@@ -25,7 +25,7 @@ class PageView extends WeElement {
     page()
   }
 
-	render(props, data) {
+	render() {
 		return (
 			<div>
         {this.data.page}
