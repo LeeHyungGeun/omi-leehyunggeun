@@ -1,18 +1,20 @@
-import { tag, WeElement } from "omi"
-import logo from "./logo.svg"
-import style from "./_index.css"
-import "../app-intro"
+import { tag, WeElement } from 'omi'
+import style from './_index.css'
+import 'elements/hello'
+import 'elements/page-view'
 
-@tag("my-app")
+
+@tag('my-app')
 class MyApp extends WeElement {
 	static get data() {
-		return { name: "" }
+		return {
+			pages: {
+				'/': <hello-element></hello-element>,
+				'/resume': 'KEN'
+			}
+		}
 	}
-
-	clickHandler = () => {
-		this.store.rename("Omi V4.0")
-	};
-
+	
 	css() {
 		return style
 	}
@@ -20,16 +22,9 @@ class MyApp extends WeElement {
 	render(props, data) {
 		return (
 			<div class="app">
-				<header class="app-header">
-					<img
-						src={logo}
-						onClick={this.clickHandler}
-						class="app-logo"
-						alt="logo"
-					/>
-					<h1 class="app-title">Welcome to {data.name}</h1>
-				</header>
-				<app-intro />
+				<main class="main">
+					<page-view pages={this.data.pages}></page-view>
+				</main>
 			</div>
 		)
 	}
