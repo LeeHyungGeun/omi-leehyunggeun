@@ -1,0 +1,36 @@
+@import 'styles/variables.scss';
+
+.me { position: absolute; width: 100%; height: 100%; background: $mainBackground; }
+
+.profile {
+  text-align: center;
+  & .image {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 50%;
+    width: 13rem;
+    height: 13rem;
+  }
+  & .description {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 5rem;
+  }
+  & .link {
+    a {
+      text-decoration: none;
+      color: inherit;
+      & i {
+        font-size: 3rem;
+        &:hover {
+          cursor: pointer;
+          color: white;
+        }
+      }
+      & + a {
+        margin-left: 3rem;
+      }
+    }
+  }
+}
