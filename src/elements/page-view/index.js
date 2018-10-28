@@ -4,16 +4,13 @@ import 'elements/hello'
 
 @tag('page-view')
 class PageView extends WeElement {
-  static get data() {
-		return { }
-  }
-
   installed() {
     this.route(this.props.pages)
   }
 
   changePage(ctx) {
-    this.data.page = this.props.pages[ctx.pathname]
+    this.store.data.page = this.props.pages[ctx.pathname]
+    this.store.data.path = ctx.pathname
     this.update()
   }
 
@@ -28,7 +25,7 @@ class PageView extends WeElement {
 	render() {
 		return (
 			<div>
-        {this.data.page}
+        {this.store.data.page}
 			</div>
 		)
 	}

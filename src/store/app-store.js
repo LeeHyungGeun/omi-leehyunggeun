@@ -1,5 +1,9 @@
 export default {
-	data: { name: "Omi" },
+	data: { 
+		name: 'Omi',
+		page: null,
+		path: '/',
+	},
 	rename: function(name) {
 		this.data.name = name
 	}
