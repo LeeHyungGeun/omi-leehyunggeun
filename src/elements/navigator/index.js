@@ -8,18 +8,23 @@ class Navigator extends WeElement {
     return style
   }
 
+  changePage = (path) => {
+    page(path)
+    this.update()
+  }
+
   render() {
     return (
       <nav class="navi">
         <a
           class={this.store.data.path === '/' ? 'active' : null}
-          onClick={() => { page('/'); this.update(); }}
+          onClick={() => this.changePage('/')}
         >
           Me
         </a>
         <a
         class={this.store.data.path === '/resume' ? 'active' : null}
-          onClick={() => { page('/resume'); this.update(); }}
+          onClick={() => this.changePage('/resume')}
         >
           Resume
         </a>
